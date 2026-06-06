@@ -89,27 +89,59 @@ waf_fuzz/
 └── output.py         # JSON/CSV/HTML 输出
 ```
 
-## 编码方式
+## 编码方式（49 种）
 
 | 名称 | 说明 |
 |------|------|
 | raw | 原始 payload |
 | urlencode | URL 编码 |
 | double_urlencode | 双重 URL 编码 |
-| html_escape | HTML 实体编码 |
-| unicode | Unicode 编码 |
-| swapcase | 大小写反转 |
-| inline_comment | 内联注释注入 |
-| hex | 十六进制转义 |
-| base64 | Base64 编码 |
+| triple_urlencode | 三重 URL 编码 |
+| percent_double | %% 双重编码绕过 |
 | unicode_url | Unicode + URL 编码 |
+| urlencode_twice_mixed | 选择性双重编码（仅特定字符）|
+| leading_zero_url | 前导零 URL 编码 (%00XX) |
+| html_escape | HTML 命名实体编码 |
+| decimal_html | HTML 十进制实体 &#xx; |
+| hex_html | HTML 十六进制实体 &#xxx; |
+| unicode | Unicode 转义 |
+| unicode_percent | %uXXXX 格式（IIS/ASP）|
+| utf16_le | UTF-16-LE 编码 |
+| full_width | 全角 ASCII 字母/数字 |
+| base64 | Base64 编码 |
+| base64_urlsafe | URL 安全 Base64 |
+| swapcase | 大小写反转 |
+| mixed_case | 交替大小写 |
+| case_by_word | 按词切换大小写 |
+| upper | 全大写 |
+| lower | 全小写 |
+| inline_comment | /**/ 替换空格 |
+| sql_comment | 每字符间插 /**/ |
+| sql_nested_comment | /*! 包裹注释 |
+| sql_mysql_comment | MySQL /*!50000*/ 版本注释 |
+| sql_hash_comment | 追加 # 注释 |
+| sql_dash_comment | 追加 -- 注释 |
+| mid_comment_char | 关键字中间插入注释 |
+| comment_wrap | /* 包裹 payload */ |
 | tab_replace | Tab 替换空格 |
-| null_byte | Null Byte 注入 |
-| mixed_case | 大小写混合 |
+| newline_replace | 换行替换空格 |
+| space_to_plus | 加号替换空格 |
+| space_to_dash | 横线替换空格 |
+| collapse_spaces | 合并连续空格 |
+| newline_delimited | %0a 分隔每个字符 |
+| tab_delimited | %09 分隔每个字符 |
+| null_byte_suffix | 末尾加 %00 空字节 |
+| null_byte_mid | 关键字中间插 %00 |
+| concat_dots | SQL \|\| 字符串连接 |
+| plus_concat | 加号字符串连接 |
+| bracket_wrap | 括号包裹 |
+| hex_escape | 纯十六进制拼接 |
+| javascript_escape | JavaScript \x 十六进制转义 |
+| wildcard_shell | Shell 通配符 `?` 替换 |
+| tilde_expand | 路径前加 ~ |
 | reverse | 字符串反转 |
-| javascript_escape | JavaScript 十六进制转义 |
-| sql_comment | SQL 注释插入 |
-| overlong_utf8 | 过长 UTF-8 编码（用于目录遍历） |
+| trailing_spaces | 尾部追加空格 |
+| overlong_utf8 | 过长 UTF-8 编码 |
 
 ## WAF 指纹识别库
 
