@@ -5,7 +5,7 @@
 ## 功能
 
 - **17 类攻击 payload** — SQLi, XSS, 命令注入, 路径穿越, SSRF, RCE, XXE, SSTI, LDAP, Open Redirect 等
-- **18 种编码/变形** — URL 编码, 双重编码, HTML 实体, Unicode, Base64, 注释注入, 大小写混淆, Null Byte 等
+- **49 种编码/变形** — URL 系列(8种), HTML实体(3种), Unicode(4种), Base64(2种), 大小写混淆(5种), 注释注入(8种), 空白变形(7种), 空字节(2种), 字符串连接(3种), Hex(2种), Shell通配符(2种), 其他(3种)
 - **多 HTTP 方法** — GET, POST, PUT, Cookie 注入, Header 注入
 - **并发 FUZZ** — 多线程快速扫描
 - **WAF 指纹识别** — 自动识别 Cloudflare, ModSecurity, AWS WAF, F5, Akamai, Imperva, Sucuri 等 15+ 种 WAF
